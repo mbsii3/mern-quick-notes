@@ -4,6 +4,7 @@ import { getUser } from '../../utilities/users-service';
 import NavBar from '../../components/NavBar/NavBar';
 import AuthPage from '../AuthPage/AuthPage';
 import NotesPage from '../NotesPage/NotesPage';
+import NewNotePage from '../NewNotePage/NewNotePage';
 import './App.css';
 
 export default function App() {
@@ -15,6 +16,7 @@ export default function App() {
           <NavBar user={user} setUser={setUser} />
           <Routes>
             <Route path='/notes' element={<NotesPage user={user} />}></Route>
+            <Route path='/notes/new' element={<NewNotePage />}></Route>
           </Routes>
         </>
         :
