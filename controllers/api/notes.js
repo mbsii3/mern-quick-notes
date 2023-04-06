@@ -6,12 +6,10 @@ module.exports = {
 
 async function create(req, res) {
     try {
+        req.body.user = req.user._id
         const createdNote = await Note.create(req.body);
-        console.log(createdNote);
         res.json(createdNote);
     } catch (err) {
-        console.log(err);
         res.status(400).json(err);
     }
-   
 }
