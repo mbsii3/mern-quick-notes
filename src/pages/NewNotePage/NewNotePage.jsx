@@ -1,4 +1,5 @@
 import { useState } from "react";
+import * as notesService from "../../utilities/notes-service";
 
 export default function NewNotePage() {
 
@@ -8,9 +9,9 @@ export default function NewNotePage() {
         setNote(evt.target.value);
     }
 
-    function handleSubmit(evt) {
+    async function handleSubmit(evt) {
         evt.preventDefault();
-        alert('clicked')
+        notesService.addNote(note)
         setNote('');
     }
 
